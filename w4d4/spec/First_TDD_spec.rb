@@ -24,3 +24,17 @@ describe "#matrix" do
     end
 end
 
+describe "#stock_picker" do 
+    context "when possible" do 
+        it "returns the highest profit" do 
+            expect(stock_picker([10,1,2,9])).to eq(8)
+        end 
+    end 
+
+    context "when not possible" do 
+        it "returns not possible" do 
+            expect(stock_picker([10,9,8])).to eq(false) 
+        end
+    end 
+end
+
