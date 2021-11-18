@@ -17,5 +17,17 @@ def two_sum(array)
     newArray 
 end
 
+def matrix(array)
+    newArray = Array.new(array.length) {Array.new}
+    (0...array.length).each do |a|
+        (0...array.length).each do |b|
+            newArray[a][b] = array[b][a]
+        end
+    end
+    newArray
+end
+
+
+
 
 
