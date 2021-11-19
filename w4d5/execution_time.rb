@@ -45,25 +45,25 @@ require "benchmark"
 # p my_minn(list) 
 # puts Benchmark.measure{my_minn(list) }
 
-def largest_contiguous_subsum(list)
-    arr = []
-    (0...list.length).each do |a| 
-        (a...list.length).each do |b| 
-            arr << list[a..b]
-        end
-    end
+# def largest_contiguous_subsum(list)
+#     arr = []
+#     (0...list.length).each do |a| 
+#         (a...list.length).each do |b| 
+#             arr << list[a..b]
+#         end
+#     end
 
-    count = arr[0]
-     arr.each do |ele|
-        if ele.sum > count.sum
-            count = ele
-        end 
-    end
-    count.sum
+#     count = arr[0]
+#      arr.each do |ele|
+#         if ele.sum > count.sum
+#             count = ele
+#         end 
+#     end
+#     count.sum
 
-end
-list = [5, 3, -7]
-p largest_contiguous_subsum(list)   
+# end
+# list = [5, 3, -7]
+# p largest_contiguous_subsum(list)   
 
 
 # lis = [2, 3, -6, 7, -6, 7]
@@ -77,7 +77,23 @@ def largest_contiguous_subsum(list)
   #var1 = One variable should track the largest sum so far
   #var2 = another to track the current sum
 
-  
+    (0...list.length).inject do |acc,i| 
+      sum = 0  
+        if list[acc..i].sum > list[i..-acc - 1].sum && i != list.length - 1 
+            sum = list[acc..i].sum 
+            acc 
+        else
+            i 
+        end
+    
+    end
+
+
 
 
 end
+
+lis = [5, 3, -7]
+list = [2, 3, -6, 7, -6, 7] Array.new(list.length)
+p largest_contiguous_subsum(list)   
+p largest_contiguous_subsum(lis)
