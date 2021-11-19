@@ -69,31 +69,26 @@ require "benchmark"
 # lis = [2, 3, -6, 7, -6, 7]
 # p largest_contiguous_subsum(lis) 
 
-list = [5, 3, -7]
+# list = [5, 3, -7]
 
-def largest_contiguous_subsum(list)
-  #constant = O(1) -> array.first - 3.times {puts "hi"}
-  #linear = O(n) -> include?() - .each(1x)
-  #var1 = One variable should track the largest sum so far
-  #var2 = another to track the current sum
+# def largest_contiguous_subsum(list)
+#   #constant = O(1) -> array.first - 3.times {puts "hi"}
+#   #linear = O(n) -> include?() - .each(1x)
+#   #var1 = One variable should track the largest sum so far
+#   #var2 = another to track the current sum
 
-    (0...list.length).inject do |acc,i| 
-      sum = 0  
-        if list[acc..i].sum > list[i..-acc - 1].sum && i != list.length - 1 
-            sum = list[acc..i].sum 
-            acc 
-        else
-            i 
-        end
-    
-    end
+def largest_continguous_subsum(arr)
+  largest_sum = arr[0] #5
+  current_sum = 0 # 0
 
-
-
-
+  arr.each do |ele| #5,3,-7
+    largest_sum = [largest_sum,current_sum] 
+    # 5 = 5,0
+  end
 end
-
-lis = [5, 3, -7]
-list = [2, 3, -6, 7, -6, 7] Array.new(list.length)
-p largest_contiguous_subsum(list)   
+list = [5,3,-7]
+lis = [2, 3, -6, 7, -6, 7]
+list1 = [-5, -1, -3]
+p largest_contiguous_subsum(list)
 p largest_contiguous_subsum(lis)
+p largest_contiguous_subsum(list1)
