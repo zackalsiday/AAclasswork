@@ -7,7 +7,7 @@ class Tower
         @board = [[4,2,3,1],[],[]]
     end
 
-    def gets 
+    def response 
         p "Which pile do you want to move from?"
         start_pos = gets.chomp 
         start_pos = start_pos.to_i 
@@ -18,15 +18,19 @@ class Tower
     end
 
     def move
-        until self.won?
-            start_pos = self.gets[0]
-            end_pos = self.gets[1]
+        until false 
+            takeinput = response
+            start_pos = takeinput[0]
+            end_pos = takeinput[1]
             take = self.board[start_pos].pop
             drop = self.board[end_pos] << take
             board
         end
         return "you won!"
     end
+
+    
+
 
 
 
