@@ -77,18 +77,32 @@ require "benchmark"
 #   #var1 = One variable should track the largest sum so far
 #   #var2 = another to track the current sum
 
-def largest_continguous_subsum(arr)
-  largest_sum = arr[0] #5
-  current_sum = 0 # 0
+# def largest_continguous_subsum(arr)
+#   largest_sum = arr[0] #5
+#   current_sum = 0 # 0
 
-  arr.each do |ele| #5,3,-7
-    largest_sum = [largest_sum,current_sum] 
-    # 5 = 5,0
-  end
+#   arr.each do |ele| #5,3,-7
+#     largest_sum = [largest_sum,current_sum] 
+#     # 5 = 5,0
+#   end
+# end
+# list = [5,3,-7]
+# lis = [2, 3, -6, 7, -6, 7]
+# list1 = [-5, -1, -3]
+# p largest_contiguous_subsum(list)
+# p largest_contiguous_subsum(lis)
+# p largest_contiguous_subsum(list1)
+
+def first_anagram?(str1,str2)
+    e = str1.chars 
+    l = str2.chars 
+    e.permutation do |arr| 
+        return true if arr == l 
+    end 
+    return false 
+
+
 end
-list = [5,3,-7]
-lis = [2, 3, -6, 7, -6, 7]
-list1 = [-5, -1, -3]
-p largest_contiguous_subsum(list)
-p largest_contiguous_subsum(lis)
-p largest_contiguous_subsum(list1)
+
+p first_anagram?("elvis", "lives") 
+p first_anagram?("gizmo", "sally")    #=> false
