@@ -45,13 +45,6 @@ CREATE TABLE question_like (
 );
 
 
-INSERT INTO 
-    users (fname , lname)
-VALUES
-    ('Jerry' , 'Phan'),
-    ('Zack', 'Alsiday');
 
-INSERT INTO 
-    questions (title, body , users_id)
-VALUES
-    ('testq', 'testing if question added', (SELECT id FROM users WHERE fname = 'Jerry'));
+
+

@@ -21,6 +21,7 @@ class Question_like
                 id = ? 
         SQL
         return nil if like.nil?
-        Question_like.new(like.first)
+        # Question_like.new(like.first)
+        question.map {|q| Question_like.new(q.first)}
     end
 end
