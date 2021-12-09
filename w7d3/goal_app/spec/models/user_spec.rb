@@ -53,8 +53,16 @@ RSpec.describe User, type: :model do
   end
 
   describe "password=" do 
+    it 'encrypts password using BCrypt' do 
+      expect(BCrypt::Password).to receive(:create).with('abcdef')
+      FactoryBot.build(:user, password: 'abcdef')
+    end
+  end
+
+  describe "reset_session_token!" do 
     
   end
+
 end
 
 
