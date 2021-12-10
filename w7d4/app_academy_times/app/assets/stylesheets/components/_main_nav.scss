@@ -34,15 +34,21 @@
 
     > li {
   display: inline-block;
+       
     }
 
     > li:last-of-type {
-  
+    display: inline-block;
+     position: absolute;
     }
   }
   
   i { 
     font-size: 15px 
+  }
+  i#gear_icon{ 
+    font-size: 15px ;
+   
   }
 }
 
@@ -51,3 +57,4 @@
   background-color: $lightest-gray;
 
 }
+

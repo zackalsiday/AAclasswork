@@ -19,9 +19,13 @@
 			<li>
 				<button>Log In</button>
 			</li>
-			<li>
-				<i class="fa fa-cog"></i>
+			<li >
+				<i id="gear_icon" class="fa fa-cog"></i>
+				<li id="gear-dropdown"> 
+					<%= render partial: 'shared/gear_dropdown' %>
+				</li>
 			</li>
+			
 		</ul>
 	</nav>
 
