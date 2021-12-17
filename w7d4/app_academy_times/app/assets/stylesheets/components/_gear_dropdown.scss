@@ -16,13 +16,16 @@ ul:last-child:hover #gear-dropdown{
 
 #gear-dropdown { 
     span  { 
-        font-size: 15px; 
+        font-size: 11px;
+        color: rgb(104, 104, 104); 
+        font-weight: bold;
         padding: 10px;
         margin-left: 20px;
         display: block;
     } 
     a  { 
-        font-size: 15px; 
+        font-size: 13px; 
+        color: gray;
         padding: 10px;
         margin-left: 20px;
         display: block;
