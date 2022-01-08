@@ -1,0 +1,11 @@
+.clock{
+   background-color: orange;
+   border: 2px solid black;
+   
+   
+}
+
+#label, value{
+ display: flex;
+    justify-content: space-between;
+}

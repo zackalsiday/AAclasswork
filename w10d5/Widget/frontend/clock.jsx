@@ -30,11 +30,17 @@ class Clock extends React.Component{
         const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         const today = day[this.state.date.getDay()] + ' ,' + month[this.state.date.getMonth()] + ' ,' + this.state.date.getDate()
         const currentTime = this.state.date.getHours() + ":" + this.state.date.getMinutes() + ":" + this.state.date.getSeconds()
-       return <div>
-           <h1>Clock</h1>
-           <h3>Time:{currentTime}</h3>
-           <h3> Date: {today }</h3>
-            </div>
+        return  <div>       
+                    <h1>Clock</h1>
+                    <div className='clock'>
+                        <h3 id="label">Time:
+                            <span id="value">{currentTime}</span>
+                        </h3>
+                        <h3 id="label"> Date:
+                            <span id="value"> {today}</span>
+                        </h3>
+                    </div>
+                </div>
              
         
         
