@@ -1,7 +1,15 @@
+.wholeclock{
+   margin-left: 600px
+}
+
 .clock{
+   width: 1500px;
+   padding: 15px;
    background-color: orange;
    border: 2px solid black;
-   
+   font-family: Orbitron;
+   font-size: 28px;
+   color: white
    
 }
 
