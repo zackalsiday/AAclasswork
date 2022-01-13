@@ -28,6 +28,7 @@ describe 'Gifts' do
 
     it 'the index page shows multiple gifts' do
       get '/api/guests/3/gifts'
+      # debugger
       expect(json[0]['title']).to eq('Baseball Glove')
       expect(json[1]['title']).to eq('Basketball Tickets')
     end

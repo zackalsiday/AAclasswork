@@ -1,9 +1,10 @@
-json.@gifts do
-    @guest.@gifts.each do |gift|
-        json.set! gift.id do
-            json.extract! gift, :title, :description, :guest_id
+# json.gifts do
+    # @gifts.each do |gift|
+    #     json.set! gift.id do
+    #         json.extract! gift, :title, :description
            
-        end
-    end
-end
+    #     end
+    # end
+    json.array! @gifts, :title, :description
+# end
 
