@@ -1,5 +1,5 @@
 import React from "react";
-
+import Tabs from './tabs'
 
 class Clock extends React.Component {
     constructor(props){
@@ -34,19 +34,28 @@ class Clock extends React.Component {
         const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
         const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         return (
-            <div className="clock">
-                <h1 className="title">Clock</h1>
-                <div className="time">
-                    <div id="title-time">Time:</div>
-                    <div id="actual-time"> {this.seconds(this.state.time.getHours())}:{this.seconds(this.state.time.getMinutes())}:{this.seconds(this.state.time.getSeconds())}</div>
+            <div>
+                <div className="clock">
+                    <h1 className="title">Clock</h1>
+                    <div className="time">
+                        <div id="title-time">Time:</div>
+                        <div id="actual-time"> {this.seconds(this.state.time.getHours())}:{this.seconds(this.state.time.getMinutes())}:{this.seconds(this.state.time.getSeconds())}</div>
+                    </div>
+                    <div className="date">
+                        <div id="title-date">Date:</div>
+                        <div id="actual-date"> {weekday[this.state.time.getDay()]} {month[this.state.time.getMonth()]} {this.seconds(this.state.time.getDate())} {this.state.time.getFullYear()}</div>
+                    </div>
                 </div>
-                <div className="date">
-                    <div id="title-date">Date:</div>
-                    <div id="actual-date"> {weekday[this.state.time.getDay()]} {month[this.state.time.getMonth()]} {this.seconds(this.state.time.getDate())} {this.state.time.getFullYear()}</div>
+
+                <br/>
+
+                <div className="tabs">
+                    <Tabs tab={[{}]} />
                 </div>
             </div>
         )
     }
 }
+// [{title:},{content:}]
 
 export default Clock
