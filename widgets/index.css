@@ -1,0 +1,53 @@
+.clock{
+    font-family: Open Sans ;
+}
+.clock-box{
+    background-color: #FCA500 ;
+}
+.time{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date{
+      display: flex;
+    justify-content: space-between;
+}
+
+.tab-item{
+    border-style: solid;
+
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #ADD8E6;
+    cursor: pointer;
+
+}
+
+
+
+.allTabs{
+    display: flex;
+    width: fit-content;
+
+}
+
+.content{
+    border-style: solid;
+     width: fit-content;
+     margin-left: 2.5rem;
+    position: absolute;
+    top: 14.5rem;
+     align-items: center;
+     width: 18.75rem;
+    height: 3rem;;
+    background-color: #ADD8E6;
+    display: flex;
+    justify-content: center;
+
+
+}
+
