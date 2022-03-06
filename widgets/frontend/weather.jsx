@@ -13,7 +13,7 @@ class Weather extends React.Component {
     }
     
     getWeather(here){
-        console.log(here)
+        // console.log(here)
         const lat = here.coords.latitude;
         const lon = here.coords.longitude;
         const apiRequest = new XMLHttpRequest();
