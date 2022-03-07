@@ -1,10 +1,11 @@
 import React from 'react'
 import * as Minesweeper from './minesweeper' 
+import Tile from './Tile'
 
 class Board extends React.Component{
     constructor(props){
     super(props)
-   
+        
     }
 
 
@@ -18,12 +19,13 @@ class Board extends React.Component{
                 {board.grid.map((row,row_idx) =>
                         <div key={`${row_idx} ${row}`}>
                             {row.map((tile, tile_idx) => 
-                            <div>{new Tile(board,board.grid[row_idx][tile_idx])}</div>
+                                <Tile
+                                    tile={tile}
+                                    updateGame={this.props.updateGame}
+                                    key={`tile-${tile_idx}`}/>
                             )}
                         </div>
-
                     )}
-
             </div>
         )
     }
