@@ -30,19 +30,9 @@ const todosReducer = (state = initialState, action) => {
             nextState[action.todo.id] = action.todo
             return nextState 
         case REMOVE_TODO: 
-            let now = nextState
-            for (var i = 0; i < now.length; i++) {
-
-                if (now[i] === action.todo) {
-
-                    now.splice(i, 1);
-                }
-            
-            }
-
-            return now
-            
-
+      
+           delete(nextState[action.todo.id])
+        return nextState
         default: 
             return state;
     }
