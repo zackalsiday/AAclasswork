@@ -21,3 +21,5 @@ export const removeTodo = (todo) => {
         todo,
     }
 }
+
+// testing clone
