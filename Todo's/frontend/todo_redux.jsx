@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './components/app'
+import Root from './components/root'
 import configureStore from './store/store';
 import { receiveTodos} from './actions/todo_actions'
 import {receiveTodo} from './actions/todo_actions'
@@ -18,5 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.receiveSteps = receiveSteps
     window.receiveStep = receiveStep
     window.removeStep = removeStep 
-    ReactDOM.render(<h1>hellooooooo</h1>, root)
+    ReactDOM.render(<Root store={store}/>, root)
 })
