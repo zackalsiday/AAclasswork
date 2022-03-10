@@ -4,8 +4,8 @@ import todosReducer from "./todos_reducer";
 
 const rootReducer = combineReducers({
     todos: todosReducer,
-    steps: stepsReducer
-  
+    steps: stepsReducer,
+
     
 })
 

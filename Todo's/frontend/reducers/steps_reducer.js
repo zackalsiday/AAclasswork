@@ -46,4 +46,3 @@ const stepsReducer = (state = initialState, action) => {
 
 export default stepsReducer
 
-// testing
