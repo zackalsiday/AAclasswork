@@ -7,16 +7,16 @@ import TodoForm from '../todo_list/todo_form'
         <ul>
             {props.todos.map((todo,idx) => {
                return (
-                
-                     <TodoListItem todo={todo}/> 
-                    
-         
+                <div>
+                  <TodoListItem todo={todo} receiveTodo={props.receiveTodo} removeTodo={props.removeTodo} /> 
+                  <button onClick={removeTodo(todo)}>Delete</button>
+                </div>
               
                )
             })}
               <TodoForm receiveTodo={props.receiveTodo}/>
         </ul>
-      
+        
         </div>
     )
    

@@ -6,34 +6,47 @@ class TodoForm extends React.Component {
         this.state = {
             id: Math.floor(Math.random() * 1000000),
             title: '',
-            body: ''
+            body: '',
+            done: false
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.updateTitle = this.updateTitle.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.updateTitle = this.updateTitle.bind(this)
         this.updateBody = this.updateBody.bind(this)
-
+        // this.updateStatus = this.updateStatus.bind(this)
     }
 
 
-
+    // updateStatus(e){
+    //     if (this.state.done == false){
+    //         this.setState({done: true})
+    //     }else{
+    //         (this.setState({done:false}))
+    //     }
+    // }
     updateTitle(e){
-        this.setState({title: e.target.value})
+    //    debugger
+              this.setState({title: e.target.value})
+       
+      
     }
 
     updateBody(e){
         this.setState({body: e.target.value})
     }
+
     handleSubmit(e){
+        // console.log(e)
         e.preventDefault();
-        this.props.receiveTodo(this.state);
-        this.setState = ({
+        this.props.receiveTodo(this.state)
+         this.setState({
             id: Math.floor(Math.random() * 1000000),
             title: '',
             body: ''
         });
     }
     render (){
-       return ( <form onSubmit={this.handleSubmit}>
+       return ( 
+            <form onSubmit={this.handleSubmit}>
             <h3>Add a Todo</h3>
             <label>Title:
                 <input type="text"
@@ -48,7 +61,9 @@ class TodoForm extends React.Component {
                         />
             </label>
             <input type="submit"  value='add todo'/>
-        </form>)
+            {/* <input onClick={this.updateStatus} type='button' value={this.state.done  ? 'undo' : 'done'}/> */}
+        </form>
+        )
     }
 }
 
