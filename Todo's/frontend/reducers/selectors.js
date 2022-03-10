@@ -1,16 +1,10 @@
- let initialstate = {
-     1: {
-         id: 1,
-         name: "zack"
-     }, 
-     2: {
-         id:2,
-         name: "arthur"
-     }
- }
- const allTodos = (state = initialstate) => {
-    const todoArray = Object.values(state);
-    return todoArray
-}
+export const allTodos = ({ todos }) => Object.keys(todos).map(id => todos[id]);
 
-export default allTodos
+export const stepsByTodoId = ({ steps }, todo_id) => {
+  const stepsByTodoId = [];
+  Object.keys(steps).forEach(stepId => {
+    const step = steps[stepId];
+    if (steps[stepId].todo_id === todo_id) stepsByTodoId.push(step)
+  })
+  return stepsByTodoId;
+};

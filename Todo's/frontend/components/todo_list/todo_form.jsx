@@ -1,70 +1,59 @@
-import React from 'react'
+import { uniqueId } from '../../util/id_generator'
+import React from 'react';
 
 class TodoForm extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            id: Math.floor(Math.random() * 1000000),
-            title: '',
-            body: '',
-            done: false
-        }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.updateTitle = this.updateTitle.bind(this)
-        this.updateBody = this.updateBody.bind(this)
-        // this.updateStatus = this.updateStatus.bind(this)
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      body: "",
+      done: false
+    };
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    // updateStatus(e){
-    //     if (this.state.done == false){
-    //         this.setState({done: true})
-    //     }else{
-    //         (this.setState({done:false}))
-    //     }
-    // }
-    updateTitle(e){
-    //    debugger
-              this.setState({title: e.target.value})
-       
-      
-    }
+  update(property) {
+    return e => this.setState({[property]: e.target.value});
+  }
 
-    updateBody(e){
-        this.setState({body: e.target.value})
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    const todo = Object.assign({}, this.state, { id: uniqueId() });
+    this.props.receiveTodo(todo);
+    this.setState({
+      title: "",
+      body: ""
+    }); // reset form
+  }
 
-    handleSubmit(e){
-        // console.log(e)
-        e.preventDefault();
-        this.props.receiveTodo(this.state)
-         this.setState({
-            id: Math.floor(Math.random() * 1000000),
-            title: '',
-            body: ''
-        });
-    }
-    render (){
-       return ( 
-            <form onSubmit={this.handleSubmit}>
-            <h3>Add a Todo</h3>
-            <label>Title:
-                <input type="text"
-                        value={this.state.title}
-                        onChange={this.updateTitle} 
-                        />
-            </label>
-            <label>body:
-                <input type="text" 
-                        value={this.state.body}
-                        onChange={this.updateBody}
-                        />
-            </label>
-            <input type="submit"  value='add todo'/>
-            {/* <input onClick={this.updateStatus} type='button' value={this.state.done  ? 'undo' : 'done'}/> */}
-        </form>
-        )
-    }
-}
+  render() {
+    return (
+      <form className="todo-form" onSubmit={this.handleSubmit}>
+        <label>Title:
+          <input
+            className="input"
+            ref="title"
+            value={this.state.title}
+            placeholder="buy milk"
+            onChange={this.update('title')}
+            required/>
+        </label>
+        <label>Body:
+          <textarea
+            className="input"
+            ref="body"
+            cols='20'
+            value={this.state.body}
+            rows='5'
+            placeholder="2% or whatever is on sale!"
+            onChange={this.update('body')}
+            required></textarea>
+        </label>
+        <button className="create-button">Create Todo!</button>
+      </form>
+    );
+  }
+};
 
-export default TodoForm
+export default TodoForm;
